@@ -69,7 +69,9 @@ enum ObjType {
     Var,
     Constr,
     QConstr,
+    GenConstr,
     SOS,
+    Batch,
 }
 
 impl FromStr for ObjType {
@@ -80,7 +82,9 @@ impl FromStr for ObjType {
             "var" => ObjType::Var,
             "constr" => ObjType::Constr,
             "qconstr" => ObjType::QConstr,
+            "genconstr" => ObjType::GenConstr,
             "sos" => ObjType::SOS,
+            "batch" => ObjType::Batch,
             _ => {
                 return Err(ParseError::Otype(
                     "expected `model`, `var`, `constr`, `qconstr` or `sos`".to_string(),
